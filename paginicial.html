@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina inicial</title>
+    <style>
+      .sectionbe {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        padding: 2rem;
+      }
+      
+      form {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      
+      h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+      
+      input, select, textarea, button {
+        width: 100%;
+        padding: .8rem;
+        margin-top: .5rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+      }
+      
+      button {
+        background-color: #6c63ff;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        margin-top: 1.5rem;
+        transition: background 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #4e47c2;
+      }
+  :root {
+    --bg-light: rgb(9, 218, 255);
+    --bg-dark: #121212;
+    --text-light: #121212;
+    --text-dark: #ffffff;
+    --accent: #21056b;
+    --gradient-header: linear-gradient(to right, #13FAFC, #FBFFF9);
+    --gradient-card: linear-gradient(to right, #13FAFC, #FBFFF9);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1.2px;
+  }
+
+  body {
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+  }
+
+  body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  header {
+    background: var(--gradient-header);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #00e1ff;
+    color: #002955;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .toggle-darkmode {
+    background: none;
+    border: 2px solid rgb(23, 177, 238);
+    padding: 0.3em 0.8em;
+    color: rgb(5, 118, 247);
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  nav a {
+    color: rgb(0, 82, 82);
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #c300ff;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  .biblioteca, .musicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    justify-content: center;
+  }
+
+  .musica, .card {
+    background: var(--gradient-card);
+    border: 1px solid #fff;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 0 10px rgba(212, 4, 240, 0.1);
+  }
+
+  body.dark .musica, body.dark .card {
+    background: #cb04fd;
+    color: #000;
+  }
+
+  .musica:hover, .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .capa, .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  a{
+    text-decoration: none;
+    color: #0645f3;
+  }
+
+  .toggle-darkmode{
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-darkmode:active{
+    transform: scale(0.9);
+  }
+
+  .line{
+       background: var(--gradient-header);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #00e1ff;
+    color: #002955;
+    gap: 10px;
+  }
+
+  .letra{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bee {
+    background-color: #00e1ff;
+  }
+
+  .caf {
+           background: var(--gradient-header);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #00e1ff;
+    color: #002955;
+    gap: 10px;
+  }
+
+  .capa {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, green, blue, alpha)
+  }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="letra">Pagina inicial</h1>
+        <button class="toggle-darkmode">🎵</button>
+    </header>
+    
+            <section class="biblioteca">
+        <article class="musica">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJQDiY4wa-pF5PX41hIefK77oN6GNj0y9AnA&s" class="capa" alt="Capa do álbum">
+            <p><strong>Ouça o álbum de Skillet</strong></p><br>
+            <nav>
+                <ul>
+                    <li>
+                      <a href="Rock Evangélico.html">Rock Evangélico</a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+    
+    
+        <article class="musica">
+            <img src="https://i.ytimg.com/vi/5FMmK7_pyvk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDMqJmYWb8qUyunRHhZAa8vxmxzCg" class="capa" alt="Capa do álbum">
+            <p><strong>ouça phonk zone</strong></p>
+                        <nav>
+                <ul>
+                    <li>
+                        <a href="phonk.html">phonk</a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+    </section>
+    <div class="line">
+      <h2 class="letra">Ouça nossas recomendações</h2>
+    </div>
+
+    <main>
+      <div class="musica">
+                <div class="line">
+          <img class="musica" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJo_lZLCiWpRNjEclV2nAbr4jBKaBdwyXJ9w&s">
+          <audio controls>
+            <source class="musica" src="audios-mp3/musica-classica.mp3">
+          </audio>
+          <p class="musica"><strong class="letra">ouça uma relaxante música classica e navegue no nosso site feito especialmnte para você!</strong></p>
+        </div>
+      </div>
+    </main>
+
+    <section class="biblioteca">
+        <article class="musica">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXceWg2SHVCXueLboeuODsCkgTK5mL9B2YWA&s" class="capa" alt="Capa do álbum">
+            <p><strong>Ouça o álbum de Cassiane e outros artistas gospel</strong></p><br>
+            <nav>
+              <ul>
+                <li>
+                  <a href="gospel.html">Gospel</a>
+                </li>
+              </ul>
+            </nav>
+            </article>
+            <article class="musica">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNzM1zqqNKc209XHFdtcTDbitHKEcJJpC5vw&s" class="capa" alt="Anime character with spiky hair and a determined expression stands in front of a colorful abstract background, evoking excitement and energy">
+              <p><strong>Ouça o nosso album opening animes</strong></p><br>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="musiquinha.html">animes</a>
+                  </li>
+                </ul>
+              </nav>
+            </article>
+
+            <section class="biblioteca">
+              <article class="musica">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWmq60uNqrf64SXzgLt3AaLvvCsy77iUlB2A&s" class="capa" alt="Capa do álbum">
+                <p>
+                  <strong>Ouça as melhores músicas</strong>
+                  <nav>
+                    <ul>
+                      <li>
+                        <a href="feel.html">as melhores do momento</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </p>
+              </article>
+            </section>
+    </section>
+
+    
+    
+    <div>
+          <details class="line">
+
+            <div class="bee">
+                          <summary class="letra">Sugestões de músicas</summary>
+            <p class="letra">Se você tem uma música incrivél que gostaria de ouvir aqui, preencha o formulário abaixo!</p>
+            </div>
+
+                <section class="sectionbe">
+
+            <form id="sugestao-musica">
+    <h2 class="bee">🎶 Sugira uma Música</h2>
+        
+
+    <label class="bee" for="nome">Seu nome</label>
+    <input type="text" id="nome" name="nome" placeholder="Ex: João do Rock" required>
+
+    <label class="bee" for="musica">Nome da música</label>
+    <input type="text" id="musica" name="musica" placeholder="Ex: Feel Invincible" required>
+
+    <label class="bee" for="artista">Artista ou banda</label>
+    <input type="text" id="artista" name="artista" placeholder="Ex: Skillet" required>
+
+    <label class="bee" for="genero">Gênero musical</label>
+    <select id="genero" name="genero">
+      <option value="">-- Escolha --</option>
+      <option>Rock</option>
+      <option>Pop</option>
+      <option>MPB</option>
+      <option>Rap</option>
+      <option>Gospel</option>
+      <option>Funk</option>
+      <option>eletrônica</option>
+      <option>Outro</option>
+    </select>
+
+    <label class="bee" for="comentario">Comentário (opcional)</label>
+    <textarea id="comentario" name="comentario" rows="4" placeholder="Por que essa música é top?"></textarea>
+
+    <button type="submit">➕ Enviar sugestão</button>
+  </form>
+  <section>
+    </details>
+    </div>
+
+  <script>
+    document.getElementById('sugestao-musica').addEventListener('submit', function(e) {
+      e.preventDefault(); // impede envio real por enquanto
+      alert('🎉 Sua sugestão foi recebida! Obrigado!');
+      this.reset();
+    });
+  </script>
+
+
+
+
+    
+
+    
+    <script>
+        document.querySelector('.toggle-darkmode').addEventListener('click' , () => {
+            document.body.classList.toggle('dark');
+        })
+    </script>
+    </div>
+
+
+</body>
+</html>

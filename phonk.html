@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musiquinha do bem</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+    }
+
+    body {
+      background: rgb(213, 152, 251);
+      color: rgb(0, 0, 0);
+    }
+
+    header {
+      background: linear-gradient(to right, #d752ff, #ffc2c2);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid rgb(0, 225, 255);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: rgb(0, 41, 85);
+    }
+
+    nav a {
+      color: rgb(0, 82, 82);
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #c300ff;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .musicas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .card {
+      background: linear-gradient(to right, #c300ff, #e79aff);
+      border: 1px solid #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s;
+      margin: 20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #e798ff;
+      border: none;
+      color: rgb(44, 20, 20);
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: hsl(269, 100%, 74%);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #f700ff, #e9c4f5);
+      border-top: 1px solid #c300ff;
+      font-size: 14px;
+    }
+
+    #player {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #e9c4f5;
+      padding: 10px;
+      border-top: 2px solid #d752ff;
+    }
+
+    .top-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-controls input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #8000ff55;
+    }
+
+    .top-controls button {
+      padding: 8px 10px;
+      background: #4e008e;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Tema claro */
+    body.tema-claro {
+      background: #f0f0f0;
+      color: #111;
+    }
+
+    body.tema-claro header {
+      background: linear-gradient(to right, #d8c3ff, #fff);
+      border-bottom: 2px solid #ccc;
+    }
+
+    body.tema-claro nav a {
+      color: #333;
+    }
+
+    body.tema-claro .card {
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    body.tema-claro footer {
+      background: #eee;
+      color: #333;
+    }
+
+    body.tema-claro #player {
+      background: #ddd;
+      border-top: 2px solid #aaa;
+    }
+
+    body.tema-claro .top-controls input {
+      background: #fff;
+      color: #000;
+      border: 1px solid #bbb;
+    }
+
+      .oli{
+    transition: transform 0.3s ease;
+  }
+
+  .oli:active{
+    transform: scale(0.9);
+  }
+
+  a{
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="bonus.html"><strong><h1>💀 PHONK ZONE</h1></strong></a>
+    <div class="top-controls">
+      <input type="text" id="busca" placeholder="🔍 Buscar..." oninput="filtrarMusicas()" />
+      <button class="oli" onclick="alternarTema()">🌓 Tema</button>
+    </div>
+
+  </header>
+
+  <main>
+    <section class="musicas">
+      <div class="card">
+        <img src="OVP.png" alt="Capa-Montagem Xonada">
+        <h3>Montagem Xonada</h3>
+        <p>MXZI x Dj Samir x DJ Javi26</p>
+        <button onclick="TocarMusica('musicas/mtg_xonada.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="finalana.png" alt="Fina Lana" />
+        <h3>Fina Lana</h3>
+        <p>6ynthmane x LXGHTXNG</p>
+        <button onclick="TocarMusica('musicas/finalana.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="sae.png" alt="Balança" />
+        <h3>Balança</h3>
+        <p>ARXF · Sayfalse</p>
+        <button onclick="TocarMusica('musicas/sae.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="vem.png" alt="vemvem" />
+        <h3>Vem Vem</h3>
+        <p> Jmilton · MC Xangai · MC MN</p>
+        <button onclick="TocarMusica('musicas/vemvem.mp3')">▶️ Tocar</button>
+      </div>
+
+<div class="card">
+        <img src="mtgBailão.png" alt="Bailão" />
+        <h3>Montagem Bailão</h3>
+        <p> Repsaj, ATLXS, MC Jhey</p>
+        <button onclick="TocarMusica('musicas/mtgBailão.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="dia.png" alt="dia" />
+        <h3>Dia Delícia</h3>
+        <p> Nakama, Mc Staff, ΣP</p>
+        <button onclick="TocarMusica('musicas/dia_delicia.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="estaNoche.png" alt="noche"/>
+        <h3>Esta Noche</h3>
+        <p>sma$her</p>
+        <button onclick="TocarMusica('musicas/esta_noche.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="sem_freio.png" alt="freio"/>
+        <h3>Sem freio</h3>
+        <p>Jmilton, Repsaj</p>
+        <button onclick="TocarMusica('musicas/sem_freio.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="bandido.png" alt="bandi"/>
+        <h3>Montagem Bandido</h3>
+        <p>Jmilton · Itamar Mc</p>
+        <button onclick="TocarMusica('musicas/bandi.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="nada.png" alt="nada"/>
+        <h3>Nada Nada</h3>
+        <p>Jmilton</p>
+        <button onclick="TocarMusica('musicas/nada.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="reinado.jpg" alt="reinado"/>
+        <h3>Reinado</h3>
+        <p> Jmilton · CHASHKAKEFIRA</p>
+        <button onclick="TocarMusica('musicas/reinado.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="pique.png" alt="pique"/>
+        <h3>Vem no pique</h3>
+        <p>  MGD · Hwungii · Itamar Mc</p>
+        <button onclick="TocarMusica('musicas/pique.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="cara.avif" alt="cara"/>
+        <h3>Vem no pique</h3>
+        <p>Jmilton, DVC</p>
+        <button onclick="TocarMusica('musicas/cara.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="feno.jpg" alt="fenomenal"/>
+        <h3>Fenomenal</h3>
+        <p>Jmilton, DVC</p>
+        <button onclick="TocarMusica('musicas/feno.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="Mtg_cot.avif" alt="contigo"/>
+        <h3>Montagem Contigo</h3>
+        <p>Repsaj</p>
+        <button onclick="TocarMusica('musicas/MONTAGEM CONTIGO.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="pecado.avif" alt="contigo"/>
+        <h3>Pecado</h3>
+        <p> VUKEINE</p>
+        <button onclick="TocarMusica('musicas/PECADO.mp3')">▶️ Tocar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PHONK ZONE — Underground Vibes Only</p>
+  </footer>
+
+  <div id="player">
+    <audio id="audioPlayer" controls></audio>
+  </div>
+
+  <script>
+    function TocarMusica(caminho) {
+      const audio = document.getElementById("audioPlayer");
+      audio.src = caminho;
+      audio.play();
+    }
+
+    function alternarTema() {
+      document.body.classList.toggle("tema-claro");
+    }
+
+    function filtrarMusicas() {
+      const termo = document.getElementById("busca").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const titulo = card.querySelector("h3").textContent.toLowerCase();
+        const artista = card.querySelector("p").textContent.toLowerCase();
+
+        if (titulo.includes(termo) || artista.includes(termo)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

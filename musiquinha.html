@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musiquinha do bem</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+    }
+
+    body {
+      background: rgb(1, 0, 58);
+      color: rgb(0, 0, 0);
+    }
+
+    header {
+      background: linear-gradient(to right, #7f1fbf, #1b0d6b);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid rgb(149, 0, 255);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: rgb(0, 41, 85);
+    }
+
+    nav a {
+      color: rgb(0, 82, 82);
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #000dff;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .musicas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .card {
+      background: linear-gradient(to right, #37085a, #e79aff);
+      border: 1px solid #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s;
+      margin: 20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #7c2796;
+      border: none;
+      color: rgb(44, 20, 20);
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: hsl(269, 100%, 74%);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #f700ff, #e9c4f5);
+      border-top: 1px solid #c300ff;
+      font-size: 14px;
+    }
+
+    #player {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #e9c4f5;
+      padding: 10px;
+      border-top: 2px solid #a100d2;
+    }
+
+    .top-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-controls input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #8000ff55;
+    }
+
+    .top-controls button {
+      padding: 8px 10px;
+      background: #4e008e;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Tema claro */
+    body.tema-claro {
+      background: #faf8fa;
+      color: #111;
+    }
+
+    body.tema-claro header {
+      background: linear-gradient(to right, #d8c3ff, #fff);
+      border-bottom: 2px solid #ccc;
+    }
+
+    body.tema-claro nav a {
+      color: #333;
+    }
+
+    body.tema-claro .card {
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    body.tema-claro footer {
+      background: #eee;
+      color: #333;
+    }
+
+    body.tema-claro #player {
+      background: #ddd;
+      border-top: 2px solid #aaa;
+    }
+
+    body.tema-claro .top-controls input {
+      background: #fff;
+      color: #000;
+      border: 1px solid #bbb;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(8, 8, 116);
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="bonus.html"><strong>OPENING ANIMES</strong></a>
+    <div class="top-controls">
+      <input type="text" id="busca" placeholder="🔍 Buscar..." oninput="filtrarMusicas()" />
+      <button onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="musicas">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTd7MstPiXDr5U9VZT2xNIPxdKdJVMnYlAmw&s" alt="deus">
+        <h3>SpecialZ</h3>
+        <p>King Gnu</p>
+        <button onclick="TocarMusica('musicas/SPECIALZ.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpzccoCcbWduS62WMC0yCUiJbQ3vXD_fOKw&s" alt="anjos" />
+        <h3>Otonoke</h3>
+        <p>Creepy Nuts</p>
+        <button onclick="TocarMusica('musicas/Otonoke.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWEeoMBEXVZrgdS3WRb18_hTXjPVebZYPiNQ&s" alt="josue" />
+        <h3>Bling-Bang-Bang-Born</h3>
+        <p>Creepy Nuts</p>
+        <button onclick="TocarMusica('musicas/mashle.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYZwYkKqmNB1G30QfhWff634pc3h0QLo442w&s" alt="fiel" />
+        <h3>Zankyou Sanka </h3>
+        <p>Aimer</p>
+        <button onclick="TocarMusica('musicas/Aimer.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH7EEu4HXpaGkjLOLGinnqhZu9zTLixMY-jQ&s" alt="calma" />
+        <h3>Inferno</h3>
+        <p>Mrs. GREEN APPLE</p>
+        <button onclick="TocarMusica('musicas/FF.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjg0o0EoOheoOMgEvRHZ7PH45qIYPEuXa9dw&s" alt="sossega" />
+        <h3>Ao no Sumika</h3>
+        <p>Tatsuya Kitani</p>
+        <button onclick="TocarMusica('musicas/jjk.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1HzlrkbvUz-BSial4fo641blJIn_mPY8MmA&s" alt="dependente" />
+        <h3>Kaikai Kitan</h3>
+        <p>Eve</p>
+        <button onclick="TocarMusica('musicas/jjkop1.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="OIP.webp" alt="500" />
+        <h3>Gurenge</h3>
+        <p>Lisa</p>
+        <button onclick="TocarMusica('musicas/lisa.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHEh045hSEggfj3ZuYSvxUj_XezGR7W-ESCg&s" alt="500" />
+        <h3> Shinzou wo Sasageyo! </h3>
+        <p>Linked Horizon</p>
+        <button onclick="TocarMusica('musicas/susageio.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4bKSpRdLM0dlXJBkF-l17CgTfUs6d5yeMMQ&s" alt="500" />
+        <h3>Netsujo No Spectrum</h3>
+        <p>Ikimonogakari</p>
+        <button onclick="TocarMusica('musicas/Netsujo No Spectrum.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI5s_AD1ucRLxc4pVG842dsMH6HUNC0hLhVg&s" alt="500" />
+        <h3>BLOODY STREAM</h3>
+        <p> Coda · Saori Kodama · 大森俊之 · 大森俊之</p>
+        <button onclick="TocarMusica('musicas/BLOODY STREAM.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQVZ6xjNShazKV4rMS9ynSRmGKZxj74lxfw&s" alt="500" />
+        <h3>Gas Gas Gas</h3>
+        <p>Manuel </p>
+        <button onclick="TocarMusica('musicas/gas.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1mu0x4zt0LpmN6qcCxNpkflXYgSDF4_ACw&s" alt="500" />
+        <h3>RUNNING IN THE 90'S</h3>
+        <p>MAX COVERI</p>
+        <button onclick="TocarMusica('musicas/RUNNING IN THE 90 S.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY00fGAFSyrB89A3-Vbz0jRDodgUZz43aQUw&s" alt="500" />
+        <h3>Deja Vu</h3>
+        <p>DAVE RODGERS</p>
+        <button onclick="TocarMusica('musicas/Deja Vu.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrRNrcw0L-eaD8zEbA4ECt8cIv-R5V1MKEQ&s" alt="500" />
+        <h3>DON'T STOP THE MUSIC</h3>
+        <p>LOU GRANT</p>
+        <button onclick="TocarMusica('musicas/DONT STOP THE MUSIC.mp3')">▶️ Tocar</button>
+      </div>
+
+            <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS14LK3NqJuqfaHG3QSrYqqytYts2LEz3_i7w&s" alt="500" />
+        <h3>Susageio</h3>
+        <p>LINKED HORIZON</p>
+        <button onclick="TocarMusica('musicas/susageio.mp3')">▶️ Tocar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 GOSPEL ZONE — Underground Vibes Only</p>
+  </footer>
+
+  <div id="player">
+    <audio id="audioPlayer" controls></audio>
+  </div>
+
+  <script>
+    function TocarMusica(caminho) {
+      const audio = document.getElementById("audioPlayer");
+      audio.src = caminho;
+      audio.play();
+    }
+
+    function alternarTema() {
+      document.body.classList.toggle("tema-claro");
+    }
+
+    function filtrarMusicas() {
+      const termo = document.getElementById("busca").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const titulo = card.querySelector("h3").textContent.toLowerCase();
+        const artista = card.querySelector("p").textContent.toLowerCase();
+
+        if (titulo.includes(termo) || artista.includes(termo)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

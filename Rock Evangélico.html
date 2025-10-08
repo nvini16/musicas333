@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock evangélico</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <style>
+    :root {
+  --bg-light: rgb(124, 7, 219);
+  --bg-dark: #121212;
+  --text-light: #121212;
+  --text-dark: #ffffff;
+  --accent: #21056b;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+header {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent);
+  color: rgb(145, 73, 173);
+}
+
+.toggle-darkmode {
+  background: none;
+  border: 2px solid rgb(145, 73, 173);
+  padding: 0.3em 0.8em;
+  color: rgb(172, 10, 247);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.biblioteca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  padding: 2em;
+}
+
+.musica {
+  background: rgb(96, 10, 194);
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(212, 4, 240, 0.1);
+  transition: background 0.3s, transform 0.3s;
+}
+
+body.dark .musica {
+  background: #cb04fd;
+}
+
+.musica:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.capa {
+  width: 100%;
+  border-radius: 10px;
+}
+
+details {
+  margin-top: 1em;
+}
+
+button.fav {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.favoritado {
+  background: rgb(5, 211, 5);
+}
+
+a{
+  text-decoration: none;
+  color: #7C07DB;
+}
+
+  .toggle-darkmode{
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-darkmode:active{
+    transform: scale(0.9);
+  }
+
+  .button {
+    background-color: #21056B;
+    color: rgb(255, 254, 254);
+    border: nome;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: hsl(269, 100%, 74%)  }
+.button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0 , 0, 0.2)
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="bonus.html"><strong><h1>Rock evangélico</h1></strong></a>
+    <button class="toggle-darkmode">🌙</button>
+  </header>
+
+  <section class="biblioteca">
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxoEX7EwMeyGzdp_qAIQKdDqDiuPFbsvSHug&s" class="capa" alt="Capa do álbum">
+      <h2>Skillet - Feel Invincible</h2>
+      <button onclick="window.open('feel.html', '_blank')" class="button">Ouvir música</button>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger
+      <P><strong>Gênero:</strong>Rock evangélico</P>
+      
+      <details>
+        <summary>Ver Letra</summary>
+        <pre>
+          Feel Invincible
+Skillet
+
+Target on my back
+Lone survivor lasts
+They got me in their sights
+
+No surrender
+No trigger fingers go
+Living the dangerous life
+
+Hey hey hey everyday when I wake
+I'm trying to get up
+They're knocking me down
+(Chewing me up spitting me out)
+
+Hey hey hey when I need to be saved
+You're making me strong
+You're making me stand
+(Never will fall never will end)
+
+Shot like a rocket up into the sky
+Nothing can stop me tonight
+
+You make me feel invincible
+Earthquake powerful
+Just like a tidal wave
+You make me brave
+You're my titanium
+Fight song raising up
+Like a roar of victory in a stadium
+
+Who can touch me cause I'm
+(I'm made of fire)
+Who can stop me tonight
+(I'm hard wired)
+You make me feel invincible
+
+I feel I feel it
+Invincible
+
+I feel I feel it
+Invincible
+
+Here we go again
+I will not give in
+I've got a reason to fight
+
+Every day we choose
+We might win or lose
+This is the dangerous life
+
+Hey hey hey everyday when I wake
+They say that I'm gone they say that they've won
+(The bell has been rung it's over and done)
+
+Hey hey hey when I need to be saved
+They're counting me out but this is my round
+(You in my corner look at me now)
+
+Shot like a rocket up into the sky
+Nothing can stop me tonight
+
+You make me feel invincible
+Earthquake powerful
+Just like a tidal wave
+You make me brave
+You're my titanium
+Fight song raising up
+Like a roar of victory in a stadium
+
+Who can touch me cause I'm
+(I'm made of fire)
+Who can stop me tonight
+(I'm hard wired)
+You make me feel invincible
+
+I feel I feel it
+Invincible
+
+I feel I feel it
+Invincible
+
+You make me feel
+Invincible
+
+You make me feel
+Invincible
+
+Shot like a rocket up into the sky
+Nothing can stop
+Invincible
+
+Feel invincible
+Earthquake powerful
+Just like a tidal wave
+You make me brave
+You're my titanium
+Fight song raising up
+Like a roar of victory in a stadium
+
+Feel invincible
+Earthquake powerful
+Just like a tidal wave
+You make me brave
+You're my titanium
+Fight song raising up
+Like a roar of victory in a stadium
+
+Who can touch me cause I'm
+(I'm made of fire)
+Who can stop me tonight
+(I'm hard wired)
+You make me feel invincible
+
+I feel I feel it
+Invincible
+
+I feel I feel it
+Invincible
+        </pre>
+      </details>
+      <button class="fav">➕ Adicionar à Playlist</button>
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-u-nyJVDl50dq-EPJUibMo9GmEdH1hUKSiA&s" class="capa" alt="Capa do álbum" />
+      <h2>Skillet - Monster</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <p><strong>Genêro:</strong>Rock Evangélico</p>
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3/skillet-monster.mp3">
+      </audio>
+
+      <details>
+        <summary>Ver Letra</summary>
+        <pre>
+          Monster
+Skillet
+
+The secret side of me
+I never let you see
+I keep it caged, but I can't control it
+So stay away from me
+The beast is ugly
+I feel the rage and I just can't hold it
+
+It's scratchin on the walls
+In the closet, in the halls
+It comes awake and I can't control it
+Hidin under the bed
+In my body, in my head
+Why won't somebody come and save me from this? Make it end
+
+I feel it deep within
+It's just beneath the skin
+I must confess that I feel like a monster
+
+I hate what I've become
+The nightmare's just begun
+I must confess that I feel like a monster
+
+I, I feel like a monster
+I, I feel like a monster
+
+My secret side I keep
+Hid under lock and key
+I keep it caged, but I can't control it
+'Cause if I let him out
+He'll tear me up, break me down
+Why won't somebody come and save me from this? Make it end
+
+I feel it deep within
+It's just beneath the skin
+I must confess that I feel like a monster
+
+I hate what I've become
+The nightmare's just begun
+I must confess that I feel like a monster
+
+I feel it deep within
+It's just beneath the skin
+I must confess that I feel like a monster
+
+I, I feel like a monster
+I, I feel like a monster
+
+It's hidin in the dark
+It's teeth are razor sharp
+There's no escape for me
+It wants my soul, it wants my heart
+
+No one can hear me scream
+Maybe it's just a dream
+Or maybe it's inside of me
+Stop this monster
+
+I feel it deep within
+It's just beneath the skin
+I must confess that I feel like a monster
+
+I hate what I've become
+The nightmare's just begun
+I must confess that I feel like a monster
+
+I feel it deep within
+It's just beneath the skin
+I must confess that I feel like a monster
+
+I gotta lose control
+Is something radical
+I must confess that I feel like a monster
+
+I, I feel like a monster
+I, I feel like a monster
+I, I feel like a monster
+I, I feel like a monster
+        </pre>
+      </details>
+      <button class="fav">➕ Adicionar à Playlist</button>
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuzVE2qlvTsUj0ve3KfEacgUlpPRQa6RkxVg&s" class="capa" alt="Capa do álbum">
+      <h2>Skillet - Comatose</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <P><strong>Gênero:</strong>Rock evangélico</P>
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3\skillet-comatose.mp3">
+      </audio>
+
+      <details>
+        <summary>Ver Letra</summary>
+        <pre>
+          Comatose
+Skillet
+
+I hate feeling like this
+I'm so tired of trying to fight this
+I'm asleep and all I dream of
+Is waking to You
+
+Tell me that you will listen
+Your touch is what I'm missing
+And the more I hide I realize
+I'm slowly losing You
+
+Comatose
+I'll never wake up without an
+Overdose
+Of You
+
+I don't wanna live
+I don't wanna breathe
+'Less I feel You next to me
+You take the pain I feel
+Waking up to You never felt so real
+I don't wanna sleep
+I don't wanna dream
+Cause my dreams don't comfort me
+The way You make me feel
+Waking up to You never felt so real
+
+I hate living without You
+Dead wrong to ever doubt You
+But my demons lay in waiting
+Tempting me away
+Oh how I adore You!
+Oh how I thirst for You!
+Oh how I need You!
+
+Comatose
+I'll never wake up without an
+Overdose
+Of You
+
+I don't wanna live
+I don't wanna breathe
+'Less I feel You next to me
+You take the pain I feel
+Waking up to You never felt so real
+I don't wanna sleep
+I don't wanna dream
+Cause my dreams don't comfort me
+The way You make me feel
+Waking up to You never felt so real
+
+Breathing life
+Waking up
+My eyes
+Open up
+
+Comatose
+I'll never wake up without an
+Overdose
+Of You
+
+I don't wanna live
+I don't wanna breathe
+'Less I feel You next to me
+You take the pain I feel
+Waking up to You never felt so real
+I don't wanna sleep
+I don't wanna dream
+Cause my dreams don't comfort me
+The way You make me feel
+Waking up to You never felt so real
+
+Oh how I adore You!
+Waking up to You never felt so real
+Oh how I thirst for You!
+Waking up to You never felt so real
+Oh how I adore You
+The way You make me feel
+Waking up to You never felt so real
+        </pre>
+      </details>
+      <button class="fav">➕ Adicionar à Playlist</button>
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR5O0UoUOuyZ44saUmKfqOMVjEF6-PvBiqMw&s" class="capa" alt="Capa do álbum">
+      <h2>Skillet - Rise</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3/skillet-rise.mp3">
+      </audio>
+
+      <details>
+        <summary>Ver Letra</summary>
+        <pre>
+          Rise
+Skillet
+
+All I see is
+Shattered pieces
+I can't keep it hidden like a secret
+I can't look away
+From all this pain in a world we made!
+
+Everyday you need
+A bulletproof vest
+To save yourself from what you could never guess!
+Am I safe today?
+When I step outside in the wars we wage!
+
+Our future's here and now
+Here comes the countdown
+
+Sound it off, this is the call
+Rise in revolution
+It's our time to change it all
+Rise in revolution
+Unite and fight, to make a better life
+Everybody one for all
+Sound off, this is the call, tonight, we rise
+
+Rise
+Tonight, we rise
+Rise
+Tonight, we rise
+
+Like a hand grenade
+Thrown in a hurricane
+Spinning in chaos
+Trying to escape the flame
+Yesterday is gone
+Faster than the blast of a car bomb
+
+And when the scars heal
+The pain passes
+As hope burns, we rise from the ashes
+Darkness fades away
+And a light shines on a brave new day
+
+Our future's here and now
+Here comes the countdown
+
+Sound it off, this is the call
+Rise in revolution
+It's our time to change it all
+Rise in revolution
+Unite and fight, to make a better life
+Everybody one for all
+Sound off, this is the call, tonight, we rise
+
+Rise
+Tonight, we rise
+Rise
+Tonight, we rise
+
+In a world gone mad
+In a place so sad
+Sometimes it's crazy
+To fight for what you believe
+But you can't give up
+If you wanna keep what you love
+(Keep what you love)
+(Keep what you love)
+(Keep what you love)
+(Keep what you love)
+Never give up, no
+
+Rise
+Rise in revolution
+Rise
+Rise in revolution
+
+Everybody one for all
+Sound off, this is the call
+
+Rise
+Like we're alive
+Tonight, we rise
+Make a better life
+Tonight, we rise
+
+Rise, rise, rise in revolution
+Rise, rise, rise in revolution
+Rise
+
+Operator: 911?
+Woman: There's a guy here with a gun
+Operator: Ma'am? ma'am?
+Woman: Kids, get under the table! kids get under the table
+
+(We are getting reports from all around the globe, showing
+The highest unemployment rates since the end of world war ii. Many are
+Losing their jobs, their homes, and in many cases, their hope)
+
+(You are such a failure! what is wrong with you? You can't
+Do anything right! I wish you had never been born!)
+        </pre>
+      </details>
+      <Button class="fav">➕ Adicionar à Playlist</Button>
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ31_DLv0tAl1FRRTr7Z7JWtdeqG65vI3nJGg&s" class="capa" alt="Capa do álbum">
+      <h2>Skillet - Save me</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <P><strong>Gênero:</strong>Rock evangélico</P>
+
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3/skillet-Save-me.mp3">
+      </audio>
+
+      <details>
+        <summary>Ver letra</summary>
+        <pre>
+          Save Me
+Skillet
+
+This is the place that no one sees
+I don't like to show (I can't help it)
+This is the darkness over me
+It's just the world I know (I can't stop it)
+
+Reaching for the light
+Reaching from inside
+Help me tonight
+
+I'm closer to the edge tonight
+I'm standin' on the ledge, so why
+Won't you reach out your hand?
+To save (to save), to save me tonight
+I'm damaged if you dare tonight
+It feels like no one cares, so why
+Can't I come up for air?
+Just save (just save), just save me tonight
+What are you waiting for?
+Someone save me
+
+Peel back the skin, exposed to you
+Take pleasure in the pain (please stop it)
+Tell me what I'm supposed to do
+It ain't easy to open up this way (I can't help it)
+
+Reaching for the light
+Reaching from inside
+Help me tonight
+
+I'm closer to the edge tonight
+I'm standing on the ledge, so why
+Won't you reach out your hand?
+To save (to save), to save me tonight
+I'm damaged if you dare (tonight)
+It feels like no one cares, so why
+Can't I come up for air?
+Just save (just save), just save me
+What are you waiting for?
+Someone save me
+
+Reaching for the light
+Reaching from inside
+Help me tonight
+
+I'm closer to the edge tonight
+I'm standin' on the ledge, so why
+Won't you reach out your hand?
+To save, to save me tonight
+I'm damaged if you dare, tonight
+It feels like no one cares, so why
+Can't I come up for air?
+Just save (just save), just save me tonight
+I'm closer to the edge tonight
+I'm standin' on the ledge, so why
+Won't you reach out your hand?
+To save (to save), to save me
+What are you waiting for?
+Someone save me
+        </pre>
+      </details>
+      <button class="fav">➕Adicionar  Playlistà</button>
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIg7Py7a_zEDyXjdiPdJC_-2PKNThg1BcHNA&s" class="capa" alt="Capa do álbum">
+      <h2>skillet - Psyco in my Head</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <P><strong>Gênero:</strong>Rock evangélico</P>
+
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3/skillet-Psycho-in-my-head.mp3">
+      </audio>
+      <details>
+        <summary>Ver letra</summary>
+        <pre>
+        Psycho In My Head
+Skillet
+
+Maybe I'm just paranoid
+Or maybe I'm just livin' a lie
+Can't stop this screamin' voice
+Or maybe I'm just sick inside
+
+This is the face
+I hate the other side of me
+Out of this cage
+He breaks to take the life from me
+Tell me, tell me, tell me
+I'm not crazy
+
+There's a psycho in my head
+I'm closer to the edge
+Makin' me feel like I'm livin' in misery, misery
+Insane
+These voices in my brain
+Startin' to feel like it's gonna be the death of me, death of me
+
+There's a psycho in my, there's a psycho in my head
+
+Livin' in hysteria
+Nothin' makes much sense tonight
+Maybe I'm too scared to trust
+To stop the chaos in my mind
+
+This is the face
+I hate the other side of me
+Help me believe
+I need to see the light in me
+Tell me, tell me, tell me
+I'm not crazy
+
+There's a psycho in my head
+I'm closer to the edge
+Makin' me feel like I'm livin' in misery, misery
+Insane
+These voices in my brain
+Startin' to feel like it's gonna be the death of me, death of me
+
+There's a psycho in my, there's a psycho in my—
+
+Maybe I'm just paranoid
+Or maybe I'm just livin' a lie
+Can't stop this screamin' voice
+Or maybe I'm just sick inside
+
+Yeah
+I'm not crazy, I'm not crazy
+
+But I might be
+'Cause there's a psycho in my head
+I'm closer to the edge
+Makin' me feel like I'm livin' in misery, misery
+Insane
+These voices in my brain
+Startin' to feel like it's gonna be the death of me, death of me
+
+There's a psycho in my head
+There's a psycho in my head
+(Livin' in misery, misery, insane)
+There's a psycho in my head
+(Gonna be the death of me, death of me)
+There's a psycho in my, there's a psycho in my head
+        </pre>
+      </details>
+      <button class="fav">➕Adicionar à Playlist</button>
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-hfYSeHlfrt-6M-r6EbdxbzHILogzKoq9qw&s" class="capa" alt="Capa do álbum">
+      <h2>Skillet - Legendary</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <P><strong>Gênero:</strong>Rock evangélico</P>
+
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3/skillet-legendary.mp3">
+      </audio>
+
+      <details>
+        <summary>Ver letra</summary>
+        <pre>
+          Legendary
+Skillet
+
+(Legendary)
+Oh
+(Legendary)
+
+My heart bleeds adrenaline
+The fire I breathe is where I live
+Say my name, incredible
+Say my name, an animal
+One life to live
+I never give up, I never give in
+
+Some people wanna turn and run (run)
+But the strong rise under the gun
+
+Top, to the top
+Ain't never gonna stop
+To the top, to the top
+Ain't never gonna stop
+
+Never gonna keep me down (never keep me)
+Still the one that's standin' now (never falling)
+Destiny is callin' me
+Go down in history
+Every day I'll fight to be
+Legendary
+Legendary
+
+Fly high or will I fall?
+Legends made when faith is strong
+
+Say my name, no time to plead
+Say my name, I'm conquering
+While I'm alive, I'll push through the pain, I'll run for the prize
+
+Some people wanna turn and run (run)
+But the strong rise under the gun
+
+Top, to the top
+Ain't never gonna stop
+To the top, to the top
+Ain't never gonna stop
+
+Never gonna keep me down (never keep me)
+Still the one that's standin' now (never falling)
+Destiny is callin' me
+Go down in history
+Every day I'll fight to be
+Legendary
+
+Every day, I'll fight to be
+Legendary
+Legendary
+
+Wings are made to fly, made to fly (made to fly)
+Fears are born to die, born to die (born to die)
+Pushin' through the pain, through the pain (through the pain)
+Pushin' through, breakin' through
+Whatever it takes, what I gotta do
+Givin' my all, givin' all that I've got
+Never will stop till I get to the top
+
+Top, to the top
+Ain't never gonna stop
+To the top, to the top
+Ain't never gonna stop
+
+Never gonna keep me down (never keep me)
+Still the one that's standin' now (never falling)
+Destiny is callin' me
+Go down in history
+Every day I'll fight to be
+Legendary
+Never gonna keep me down (never keep me)
+Still the one that's standin' now (never falling)
+Destiny is callin' me
+Go down in history
+Every day I'll fight to be
+Legendary
+Legendary
+        </pre>
+      </details>
+      <button class="fav">➕Adicionar à Playlist</button>
+
+    </article>
+
+    <article class="musica">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5N1zPHFkL0C2EQnBBe0HlZOmnC_EouMa9Bw&s" class="capa" alt="Capa do álbum">
+      <h2>Skillet - Not gonna die</h2>
+      <p><strong>Artista:</strong>John Cooper<br>Korey Cooper<br>Seth Morrison<br>Jen Ledger</p>
+      <P><strong>Gênero:</strong>Rock evangélico</P>
+      <audio controls autoplay loop muted preload>
+        <source src="audios-mp3/skillet-not-gonna-die.mp3">
+      </audio>
+      <details>
+        <summary>Ver letra</summary>
+        <pre>
+          Not Gonna Die
+Skillet
+
+Death surrounds
+My heartbeat's slowing down
+I won't take this world's abuse
+I won't give up, I refuse!
+
+This is how it feels when you're bent and broken
+This is how it feels when your dignity's stolen
+When everything you love is leaving
+You hold on to what you believe in
+
+(The last thing I heard was you whispering goodbye)
+(And then I heard you flatline)
+No, not gonna die tonight
+We're gonna stand and fight forever
+
+(Don't close your eyes)
+No, not gonna die tonight
+We've gonna fight for us together
+No, we're not gonna die tonight
+
+Break their hold
+'Cause I won't be controlled
+They can't keep their chains on me
+When the truth has set me free
+
+This is how it feels when you take your life back
+This is how it feels when you finally fight back
+When life pushes me I push harder
+What doesn't kill me makes me stronger
+
+(The last thing I heard is you whispering goodbye)
+(And then I heard you flatline)
+No, not gonna die tonight
+We're gonna stand and fight forever
+
+(Don't close your eyes)
+No, not gonna die tonight
+We're gonna fight for us together
+No, we're not gonna die tonight
+
+Don't you give up on me
+You're everything I need
+This is how it feels when you take your life back
+This is how it feels when you fight back
+
+No, not gonna die tonight
+We're gonna stand and fight forever
+(Don't close your eyes)
+No, not gonna die tonight
+
+We're gonna fight for us together
+No, we're not gonna die tonight
+No, we're not gonna die tonight
+(Not gonna die)
+
+(Not gonna die)
+Not gonna die tonight
+        </pre>
+      </details>
+      <button class="fav">➕Adicionar à Playlist</button>
+    </article>
+  </section>
+
+  <script>
+    document.querySelector('.toggle-darkmode').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    document.querySelectorAll('.fav').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const nomeMusica = btn.parentElement.querySelector('h2').innerText;
+        localStorage.setItem(`fav-${nomeMusica}`, true);
+        btn.innerText = '✔️ Adicionado';
+        btn.classList.add('favoritado');
+      });
+    });
+
+    function playSync() {
+      const video = document.getElementById('video')
+      const audio = document.getElementById('audio')
+
+      video.currentTime = 0;
+      audio.currentTime = 0;
+
+      video.play();
+      audio.play();
+    }
+  </script>
+</body>
+</html>

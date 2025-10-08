@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As melhores do momento</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+    }
+
+    body {
+      background: rgb(34, 35, 48);
+      color: rgb(0, 225, 255);
+    }
+
+    header {
+      background: linear-gradient(to right, #003cff, #ff0202);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid rgb(49, 3, 253);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: rgb(4, 8, 12);
+    }
+
+    nav a {
+      color: rgb(2, 14, 14);
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #070a25;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .musicas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .card {
+      background: linear-gradient(to right, #1f55c9, #0c3b46);
+      border: 1px solid #884747;
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s;
+      margin: 20px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #073AF7;
+      border: none;
+      color: rgb(7, 2, 2);
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: hsl(224, 93%, 35%);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #0051ff, #bf00ff);
+      border-top: 1px solid #9ca1a3;
+      font-size: 14px;
+    }
+
+    #player {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #EA0717;
+      padding: 10px;
+      border-top: 2px solid #f83d04;
+    }
+
+    .top-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-controls input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      background: #1a1a1a;
+      color: #110808;
+      border: 1px solid #23123555;
+    }
+
+    .top-controls button {
+      padding: 8px 10px;
+      background: #4a65d4;
+      border: none;
+      color: rgb(3, 4, 14);
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Tema claro */
+    body.tema-claro {
+      background: #288a59;
+      color: #111;
+    }
+
+    body.tema-claro header {
+      background: linear-gradient(to right, #00ff6a, #ff00ea);
+      border-bottom: 2px solid #51fa03;
+    }
+
+    body.tema-claro nav a {
+      color: #050803;
+    }
+
+    body.tema-claro .card {
+      background: #0bdd2ee8;
+      border: 1px solid #02fc38;
+    }
+
+    body.tema-claro footer {
+      background: #ffffff;
+      color: #333;
+    }
+
+    body.tema-claro #player {
+      background: #f64afc;
+      border-top: 2px solid #fc02d2;
+    }
+
+    body.tema-claro .top-controls input {
+      background: #fdfdfd;
+      color: #000;
+      border: 1px solid #d4cccc;
+    }
+
+      .biblioteca, .musicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    justify-content: center;
+  }
+
+    .musica, .card {
+    background: var(--gradient-card);
+    border: 1px solid #fff;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 0 10px rgba(212, 4, 240, 0.1);
+  }
+
+  body.dark .musica, body.dark .card {
+    background: #cb04fd;
+    color: #013cfd;
+  }
+
+  .musica:hover, .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .capa, .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>As Melhores musicas Atuais </h1>
+    <div class="top-controls">
+      <input type="text" id="busca" placeholder="🔍 Buscar..." oninput="filtrarMusicas()" />
+      <button onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="musicas">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWCmZ2y4PY__T3oBfM_JEvuvPw21YkDwQSQw&s" alt="funk">
+        <h3>oh garota</h3>
+        <p>Oruan ft. Zé Felipe, MC Tuto, Rodrigo do CN</p>
+        <button onclick="TocarMusica('audios-mp3/oh-garota.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSyOyg6rOgD0SnbHEc93hEyaKaif2QyQBnkQ&s" alt="funk" />
+        <h3>Nao era love</h3>
+        <p>Luan Pareira, @mctuto_, @Eogrelo</p>
+        <button onclick="TocarMusica('audios-mp3/LOVE.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ72SBL7j7jVB-WA0WMYQl4rY422GZsBRTswA&s" alt="piseiro" />
+        <h3>mae solteira</h3>
+        <p>J.Eskine, MC Davi, MC G15, DG e Batidao Stronda</p>
+        <button onclick="TocarMusica('audios-mp3/mae-solteira.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToB80Ux_bRdyLSQZoyV9YZhtAfPH7TJcGIYw&s" alt="arrocha" />
+        <h3>resenha-do-arrocha</h3>
+        <p>J.Eskine</p>
+        <button onclick="TocarMusica('audios-mp3/resenha.mp3')">▶️ Tocar</button>
+      </div>
+
+       <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUXmAwKMgwSti7tVDlwNSULOKUlu44SCoSHg&s" alt="funk" />
+        <h3>No Barraco Dela Lá</h3>
+        <p>MC Marlon PH e Guizin da Serra</p>
+        <button onclick="TocarMusica('audios-mp3/no-barraco-dela.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRkom1IWWwycXVdT80cBVS_N_yLiqO-J525Q&s" alt="funk" />
+        <h3>famosinha </h3>
+        <p>MC Rodrigo do CN e MC Meno K (DJ Caio Vieira)</p>
+        <button onclick="TocarMusica('audios-mp3/famosinha.mp3')">▶️ Tocar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQytaMX-dMsUMr7LX0TCOFXV9bnbFQDgyrAhQ&s" alt="funk" />
+        <h3>perversa </h3>
+        <p>Pedro Sampaio, J Balvin</p>
+        <button onclick="TocarMusica('audios-mp3/perversa.mp3')">▶️ Tocar</button>
+      </div>
+  
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrylsh-ujMR7ekK8YmwcjZGlGxHo4owzec5w&s" alt="funk" />
+        <h3>imaginação </h3>
+        <p>DJ TOPO, LIVINHO</p>
+        <button onclick="TocarMusica('audios-mp3/imaginacao.mp3')">▶️ Tocar</button>
+      </div>
+
+          <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUCxtfIktqn7CFBjLAcd7PHlgtgEak8GdI9w&s" alt="funk" />
+        <h3>PORSCHE AZUL </h3>
+        <p> FELIPE BEATS, ZÉ FELIPE, VITOR DAS LENTS </p>
+        <button onclick="TocarMusica('audios-mp3/porche.mp3')">▶️ Tocar</button>
+      </div>
+
+          <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDJz1K_eAAriPu_EidSeBdVnZaBRE-B5HF_Q&s" alt="funk" />
+        <h3>  Vacilão </h3>
+        <p> Zé Felipe, @Igowigoww , @wesleysafadao </p>
+        <button onclick="TocarMusica('audios-mp3/vacilao.mp3')">▶️ Tocar</button>
+      </div>
+      </section>
+  </main>
+
+  <footer>
+    <p>© 2025 A melhores do momento — Underground Vibes Only</p>
+  </footer>
+
+  <div id="player">
+    <audio id="audioPlayer" controls></audio>
+  </div>
+
+  <script>
+    function TocarMusica(caminho) {
+      const audio = document.getElementById("audioPlayer");
+      audio.src = caminho;
+      audio.play();
+    }
+
+    function alternarTema() {
+      document.body.classList.toggle("tema-claro");
+    }
+
+    function filtrarMusicas() {
+      const termo = document.getElementById("busca").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const titulo = card.querySelector("h3").textContent.toLowerCase();
+        const artista = card.querySelector("p").textContent.toLowerCase();
+
+        if (titulo.includes(termo) || artista.includes(termo)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
